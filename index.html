@@ -18,85 +18,295 @@
 			 on ${new Date().toLocaleString("en-US")}</strong>`;
 		});
 	</script>
+	<style>
+		/* Insert page styles here */
+	</style>
 </head>
 
 <body>
 	<header>
+		<img src="images/bear.png" alt="Laura's Profile Picture" height="50" width="50" />
 		<h1>Hi, I'm Laura Tian</h1>
 		<h2>I'm into Web Development</h2>
-		
-		<section id="user-info-component">
-			<div id="user-info" style="display: none;">
-				<output id="name-info">&nbsp;</output>
-				<br />
-				<output id="major-info">&nbsp;</output>
-				<hr />
-				<br />
-				<!-- Inline Javascript Handlers used here for demonstration only -->
-				<section class="intro-text">
-					<label>My name is <input id="name-input" type="text" autocomplete="name" autofocus maxlength="30" placeholder="Your Name"></label>
-					<br />
-					<label>My major is <input id="major-input" type="text" maxlength="30" placeholder="Your Major"></label>
-				</section>
-	
-				<button onclick="window.update();">Update</button>
-			</div>
-			<script>
-				document.getElementById('user-info').style.display = 'block';
-			</script>
-			<noscript class="error">Error: JavaScript is disabled or blocked.</noscript>
-		</section>
-
-
-		<!-- <section id="page-load-component">
-			<div id="load-info" style="display: none;">
-				<output id="page-load-info">Measuring...</output>
-			</div>
-			<script>
-				document.getElementById('load-info').style.display = 'block';
-			</script>
-			<noscript class="error">Error: JavaScript required for page timing measurement </noscript>
-		</section> -->
 	</header>
 
 	<main>
-		<h2>UCSD Images</h2>
-		<section class="img">
-			<img src="images/bear.png" alt="Warren Bear" height="430" width="700" />
-			<img src="images/triton.jpg" alt="Triton" height="430" width="700" />
-			<a href="https://ucsd.edu" target="_blank"><img src="images/ucsd.gif" alt="UCSD" height="177"
-				width="700"></a>
+		<section id="about-me">
+			<h2>About Me</h2>
+			<pre>
+I am a computer science student at UCSD with an interest for web development and machine learning. Lorem ipsum dolor 
+sit amet, consectetur adipiscing elit. Proin pellentesque mi eu mauris congue iaculis. Vestibulum pharetra molestie lorem sit 
+amet finibus. Donec id pharetra purus, et bibendum orci. Integer consectetur justo nec lacus finibus posuere. Ut non lectus quam. 
+Suspendisse potenti. Nulla congue ornare porta. <em>Integer suscipit</em> nec arcu et luctus. Nunc efficitur dolor nec leo fermentum rhoncus.
+Praesent sodales varius odio, non viverra ligula euismod vel. Cras vel justo et arcu fringilla scelerisque. Sed a orci lectus. 
+Fusce nec est at ante fermentum facilisis sit amet vel nibh. Duis maximus ex id viverra semper. Duis venenatis dui tincidunt, 
+efficitur ante at, scelerisque quam.
+			</pre>
+		</section>
+		<section id="skills">
+			<h2>GPA and Relevant Coursework</h2>
+			<ul>
+				<li><p>GPA: <i>3.75</i></p></li>
+				<li><p>Lorem ipsum dolor sit amet</p></li>
+				<li><p>Cras vel justo et arcu fringilla</p></li>
+			</ul>
 			<br />
-			<section id="links">
-				<h2>Useful Links</h2>
+	
+			<h2>Technical Skills</h2>
+			<ul>
+				<li><p>Duis venenatis dui tincidunt</p></li>
+				<li><p>Nulla vel lorem ligula</p></li>
+				<li><p>urna a auctor malesuada</p></li>
+			</ul>
+		</section>
+		<section id="experiences">
+			<h2>Experience 1</h2>
+			<img src="images/bear.png" alt="Experience 1 relevant picture" height="50" width="50" />
+			<p>Project Description Here. Quisque rutrum urna tellus, ac <b>consequat massa</b> commodo eget</p>
+			<br />
+	
+			<h2>Experience 2</h2>
+			<img src="images/bear.png" alt="Experience 2 relevant picture" height="50" width="50" />
+			<p>Project Description Here. Sed pellentesque imperdiet mi quis tincidunt. Quisque libero 
+				magna, ornare in massa ut, laoreet viverra sapien. Where I use <code>ReactJS</code> to build websites.
+			</p>
+			<br />
+	
+			<h2>Experience 3</h2>
+			<img src="images/bear.png" alt="Experience 3 relevant picture" height="50" width="50" />
+			<p>Project Description Here.
+				Pellentesque egestas, urna a auctor malesuada, velit diam mollis odio, non ullamcorper nisi turpis eget metus.
+			</p>
+			<br />
+		</section>
+		<section id="projects">
+			<h1>Project 1</h1>
+			<h3>Project Name</h3>
+			<p>Project Description here</p>
+			<iframe src="https://github.com/" title="Project 1 Code Snippet"></iframe>
+			<button type="button"><a href="" target="_blank">Project Link</a></button>
+			<br />
+
+			<h1>Project 2</h1>
+			<h3>Project Name</h3>
+			<p>Project Description here</p>
+			<button type="button"><a href="" target="_blank">Project Link</a></button>
+			<br />
+
+			<h1>Project 3</h1>
+			<h3>Project Name</h3>
+			<p>Project Description here</p>
+			<button type="button"><a href="" target="_blank">Project Link</a></button>
+			<br />
+
+			<aside>
+				<h3><span style="color:red">Important</span> Things I Learned</h3>
+				<p>Insert description of details here.
+					Mauris malesuada, neque ut pretium maximus, risus lacus convallis velit, vel efficitur diam metus sit amet orci. Quisque tempor molestie felis quis consectetur. <strong>Aliquam mattis enim nunc</strong>, ac ultrices est finibus ut.</p>
+			</aside>
+		</section>
+
+		<hr>
+
+		<section>
+			<h2>Fields of Interest</h2>
+			<picture>
+				<img src="images/software-engineering.jpg" alt="Software Engineering" height="200" width="400" />
+				<img src="images/machine-learning.jpg" alt="Machine Learning" height="200" width="400" />
+			</picture>
+		</section>
+		<section>
+			<h2>Hobbies</h2>
+			<p>One thing about me is that I <strong>LOVE</strong> to cook! One of my favorite recipes to make is Egg Fried Rice. 
+				The recipe is as follows:</p>
+			<details>
+				<summary>Ingredients</summary>
 				<ul>
-					<li><a href="http://tritonlink.ucsd.edu">TritonLink</a></li>
-					<li><a href="http://canvas.ucsd.edu">Canvas</a></li>
-					<li><a href="http://w3.org">W3</a></li>
+					<li>Cooked Rice</li>
+					<li>Eggs</li>
+					<li>Onions</li>
+					<li>Carrots</li>
+					<li>Peas</li>
+					<li>Corn</li>
+					<li>Pepper, Soysauce</li>
 				</ul>
+			</details>
+			<details>
+				<summary>Instructions</summary>
+				<ol>
+					<li>Prepare all the ingredients and dice vegetables</li>
+					<li>Heat up a pan to medium heat with oil</li>
+					<li>Stir fry the eggs and remove from pan</li>
+					<li>Stir fry the diced vegetables</li>
+					<li>Add back in the eggs and rice</li>
+					<li>Add rest of spices and stir fry for 5 more minutes</li>
+					<li>Remove from stove and serve!</li>
+				</ol>
+			</details>
+			
+		</section>
+
+		<section id="UCSD">
+			<section class="video">
+				<h2>UCSD Promo Video</h2>
+				<video controls height="393" width="700">
+					<source src="videos/videoplayback.mp4" type="video/mp4" />
+					<div class="error">Your browser does not support the video tag.</div>
+				</video>
+			</section>
+			<br />
+
+			<section class="img">
+				<h2>Favorite Spots at UCSD</h2>
+				<figure>
+					<img src="images/bear.png" alt="Warren Bear" height="430" width="700" />
+					<figcaption>UCSD Warren Bear Next to CSE Building</figcaption>
+				</figure>
+				<figure>
+					<img src="images/triton.jpg" alt="Triton" height="430" width="700" />
+					<figcaption>UCSD Triton Statue</figcaption>
+				</figure>
+				<br />
+
+				<section id="links">
+					<h2>Useful UCSD Links</h2>
+					<ul>
+						<li><a href="http://tritonlink.ucsd.edu">TritonLink</a></li>
+						<li><a href="http://canvas.ucsd.edu">Canvas</a></li>
+						<li><a href="http://w3.org">W3</a></li>
+					</ul>
+				</section>
 			</section>
 
-		<section class="video">
-			<h2>UCSD Promo Video</h2>
-			<video controls height="393" width="700">
-				<source src="videos/videoplayback.mp4" type="video/mp4" />
-				<div class="error">Your browser does not support the video tag.</div>
-			</video>
-		</section>
-			<br />
+			<section id="courses">
+				<table>
+					<colgroup>
+						<col span="1" style="">
+						<col style="">
+					</colgroup>
+					<caption><h2>Fall 2023 Courses</h2></caption>
+					<tr>
+						<th>Course Number</th>
+						<th>Course Name</th>
+					</tr>
+					<tr>
+						<td>CSE 127</td>
+						<td>Intro to Computer Security</td>						
+					</tr>
+					<tr>
+						<td>CSE 132A</td>
+						<td>Database System Principles</td>
+					</tr>
+					<tr>
+						<td>CSE 134B</td>
+						<td>Web Client Languages</td>
+					</tr>
+					<tr>
+						<td>CSE 151A</td>
+						<td>Intro to Machine Learning</td>
+					</tr>
+				</table>
 
+			</section>
+		</section>
+		
+		<hr>
+
+		<section id="contact-info">
+			<h2>Personal Profiles</h2>
+			<nav>
+				<ul>
+					<li><a href="">LinkedIn</a></li>
+					<li><a href="">GitHub</a></li>
+					<li><a href=""></a>Email</li>
+				</ul>
+			</nav>
+		</section>
+
+		<section id="email">
+			<form action="/action_page.php">
+				<fieldset>
+					<legend><h2>Send me an Email!</h2></legend>
+					<label for="purpose">Choose purpose of email:</label>
+					<select name="purpose" id="purpose">
+					<optgroup label="Personal">
+						<option value="get-to-know">Get to know me</option>
+						<option value="inquiry">Inquiry</option>
+					</optgroup>
+					<optgroup label="Recruiter">
+						<option value="job">Job Offer</option>
+						<option value="inquiry">Inquiry</option>
+					</optgroup>
+					</select>
+					<br><br>
+					<label for="name">Name:</label>
+					<input type="text" id="name" name="name"><br>
+					<label for="body">Email Body:</label><br>
+					<textarea id="body" name="body" rows="4" cols="50">Please type email here.</textarea><br>
+					<input type="submit" value="Send">
+				</fieldset>
+			  </form>
+		</section>
+
+		<section id="review">
+			<form action="/action_page.php">
+				<fieldset>
+					<legend><h2>Leave a Review</h2></legend>
+					<label for="type">Which Browser are you using?:</label>
+					<input list="browsers" name="browser" id="browser">
+					<datalist id="browsers">
+						<option value="Edge">
+						<option value="Firefox">
+						<option value="Chrome">
+						<option value="Opera">
+						<option value="Safari">
+					</datalist>
+					<br><br>
+					<label for="body">Review:</label><br>
+					<textarea id="body" name="body" rows="4" cols="50">Please inform me on any improvements to the website you would like to see!</textarea><br>
+					<input type="submit" value="Send">
+				</fieldset>
+			  </form>
+		</section>
+
+		<section id="draw">
+			<p>Click the button below to display circle drawings:</p>
+			<button onclick="showContent()">Show Circles</button>
+			<template>
+				<h2>Here's a circle drawing</h2>
+				<canvas id="myCanvas" width="300" height="150" style="border:1px solid grey"></canvas>
+				<script>
+					const c = document.getElementById("myCanvas");
+					const ctx = c.getContext("2d");
+					ctx.beginPath();
+					ctx.arc(100, 75, 50, 0, 2 * Math.PI);
+					ctx.stroke();
+				</script> 
+				<h2>Here's another circle drawing</h2>
+				<svg height="100" width="100">
+					<circle cx="50" cy="50" r="40" stroke="black" stroke-width="3" fill="" />
+				</svg>
+			</template>
+
+			<script>
+				function showContent() {
+					let temp = document.getElementsByTagName("template")[0];
+					let clon = temp.content.cloneNode(true);
+					document.body.appendChild(clon);
+				}
+			</script>
+			
 		</section>
 	</main>
 
 	<footer>
 		<hr/>
-		<p>💯This page was made with &hearts; by Laura Tian 💯</p>
+		<p>Thank you for viewing! &hearts;</p>
+		<audio controls>
+			<source src="audio\female-thankyou.mp3" type="audio/mpeg">
+			Your browser does not support the audio element
+		</audio>
 	</footer>
-	<script type="module">
-		import { update } from './scripts/main.js';
-		window.update = update;
-	</script>
-	<script nomodule src="scripts/main-es5.js"></script>
 </body>
 
 </html>
