@@ -48,7 +48,7 @@
     --tertiary-color: #c9b7da;
 }
 
-img {
+img, video {
     width: 100%;
     height: auto;
 }
