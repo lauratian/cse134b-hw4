@@ -48,6 +48,11 @@
     --tertiary-color: #c9b7da;
 }
 
+img {
+    width: 100%;
+    height: auto;
+}
+
 body {
     font-family: 'Arial', sans-serif;
     margin: 0;
