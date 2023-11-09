@@ -19,30 +19,380 @@
 		});
 	</script>
 	<style>
-		/* Insert page styles here */
+		/* CSS Variables */
+		:root {
+			--primary-color: #aa89c9;
+			--secondary-color: #602f74;
+		}
+		
+		body {
+			font-family: 'Arial', sans-serif;
+			margin: 0;
+			padding: 0;
+			box-sizing: border-box;
+		}
+
+		header {
+			text-align: center;
+			color: #fff;
+			/* padding: 20px; */
+			/* CSS Variables */ 
+			background-color: var(--primary-color);
+		}
+
+		.header-grid {
+			display: grid;
+			grid-template-columns: 1fr 2fr;
+			/* background-color: var(--secondary-color); */
+			gap: 10px;
+			padding: 10px
+		}
+
+		#pfp {
+			grid-column: 1 / 2;
+			grid-row: 1 / 3;
+
+			max-width: 100%;
+			height: auto;
+			max-height: 100%;
+			border-radius: 50%;
+		}
+
+		#name {
+			grid-column: 2 / 3;
+			grid-row: 1 / 2;
+		}
+
+		#position {
+			grid-column: 2 / 3;
+			grid-row: 2 / 3;
+		}
+
+		header nav {
+			text-align: right;
+			background-color: white;
+			padding: 10px;
+
+			.menu {
+				padding: 10px;
+				text-decoration: none;
+				color: var(--secondary-color);
+			}
+		}
+
+		h2 {
+			color: #271347;
+		}
+
+		section {
+			background-color: #ecf0f1;
+			padding: 20px;
+			border-radius: 8px;
+		}
+
+		main {
+			display: grid;
+			grid-template-columns: repeat(6, 1fr);
+			grid-gap: 10px;
+			padding: 20px;
+		}
+
+		/* Media Queries for Responsive Design */
+		@media screen and (min-width: 368px) {
+			main {
+				grid-template-columns: repeat(6, 1fr);
+			}
+		}
+
+		#skills {
+			grid-row: 1 / 2;
+			grid-column: 1 / 3;
+		}
+
+		#about-me {
+			grid-row: 1 / 2;
+			grid-column: 3 / 7;
+		}
+
+		#experiences {
+			grid-row: 2 / 3;
+			grid-column: 1 / 7;
+
+			display: grid;
+			grid-template-columns: repeat(3, 1fr);
+			grid-gap: 20px;
+			padding: 20px;
+		}
+
+		#exp1 {
+			grid-row: 1 / 2;
+			grid-column: 1 / 2;
+		}
+
+		#exp2 {
+			grid-row: 1 / 2;
+			grid-column: 2 / 3;
+		}
+
+		#exp3 {
+			grid-row: 1 / 2;
+			grid-column: 3 / 4;
+		}
+
+		#projects {
+			grid-row: 3 / 4;
+			grid-column: 1 / 7;
+
+			display: grid;
+			grid-template-columns: repeat(3, 1fr);
+			grid-gap: 20px;
+			padding: 20px;
+		}
+
+		#proj1 {
+			grid-row: 1 / 2;
+			grid-column: 1 / 2;
+		}
+
+		#proj2 {
+			grid-row: 1 / 2;
+			grid-column: 2 / 3;
+		}
+
+		#proj3 {
+			grid-row: 1 / 2;
+			grid-column: 3 / 4;
+		}
+
+		#interests {
+			grid-row: 4 / 5;
+			grid-column: 1 / 4;
+		}
+
+		#hobbies {
+			grid-row: 4 / 5;
+			grid-column: 4 / 7;
+		}
+
+		#UCSD {
+			grid-row: 5 / 7;
+			grid-column: 1 / 7;
+		}
+
+		#contact-info {
+			grid-row: 7 / 8;
+			grid-column: 1 / 7;
+		}
+
+		#email {
+			grid-row: 8 / 9;
+			grid-column: 1 / 4;
+		}
+
+		#review {
+			grid-row: 8 / 9;
+			grid-column: 4 / 7;
+		}
+
+		footer {
+			text-align: center;
+			padding: 20px;
+			background-color: #333;
+			color: white;
+		}
+
 	</style>
+	<!-- <style>
+		/* CSS Animations */
+		@keyframes fadeIn {
+			from {
+				opacity: 0;
+			}
+			to {
+				opacity: 1;
+			}
+		}
+
+		/* Apply animation to main section */
+		main section {
+			animation: fadeIn 1s ease-in-out;
+		}
+
+		/* CSS Transitions */
+		button {
+			background-color: var(--secondary-color);
+			color: #fff;
+			border: none;
+			padding: 10px 20px;
+			cursor: pointer;
+			transition: background-color 0.3s ease-in-out;
+		}
+
+		button:hover {
+			background-color: var(--primary-color);
+		}
+
+		/* CSS Transforms */
+		/* section img {
+			transform: rotate(20deg);
+		} */
+
+		/* Media Queries for Responsive Design */
+		@media screen and (max-width: 600px) {
+			main {
+				grid-template-columns: 1fr;
+			}
+		}
+
+		/* Add more styles as needed */
+	</style> -->
+
+	<!-- <style>
+		/* Insert page styles here */
+		body {
+			font-family: 'Arial', sans-serif;
+			margin: 0;
+			padding: 0;
+			background-color: #f4f4f4;
+		}
+
+		header {
+			background-color: #333;
+			color: white;
+			text-align: center;
+			padding: 20px;
+		}
+
+		header img {
+			border-radius: 50%;
+		}
+
+		main {
+			max-width: 800px;
+			margin: 20px auto;
+			padding: 20px;
+			background-color: white;
+			box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+		}
+
+		section {
+			margin-bottom: 20px;
+		}
+
+		h1, h2, h3 {
+			color: #333;
+		}
+
+		pre {
+			white-space: pre-wrap;
+		}
+
+		ul {
+			list-style-type: none;
+			padding: 0;
+		}
+
+		li {
+			margin-bottom: 10px;
+		}
+
+		img {
+			max-width: 100%;
+			height: auto;
+			border-radius: 5px;
+		}
+
+		iframe {
+			width: 100%;
+			height: 300px;
+			border: none;
+		}
+
+		aside {
+			background-color: #f8d7da;
+			color: #721c24;
+			padding: 10px;
+			border: 1px solid #f5c6cb;
+			border-radius: 5px;
+		}
+
+		section img {
+			margin-right: 10px;
+		}
+
+		video {
+			width: 100%;
+		}
+
+		figure {
+			margin: 0;
+			text-align: center;
+		}
+
+		figcaption {
+			margin-top: 10px;
+			font-style: italic;
+			color: #666;
+		}
+
+		table {
+			width: 100%;
+			border-collapse: collapse;
+			margin-top: 10px;
+		}
+
+		th, td {
+			padding: 10px;
+			border: 1px solid #ddd;
+			text-align: left;
+		}
+
+		caption {
+			font-weight: bold;
+		}
+
+		footer {
+			text-align: center;
+			padding: 20px;
+			background-color: #333;
+			color: white;
+		}
+
+		button {
+			padding: 10px;
+			background-color: #007bff;
+			color: white;
+			border: none;
+			border-radius: 5px;
+			cursor: pointer;
+		}
+
+		button:hover {
+			background-color: #0056b3;
+		}
+
+		template {
+			display: none;
+		}
+	</style> -->
 </head>
 
 <body>
 	<header>
-		<img src="images/bear.png" alt="Laura's Profile Picture" height="50" width="50" />
-		<h1>Hi, I'm Laura Tian</h1>
-		<h2>I'm into Web Development</h2>
+		<nav>
+			<a class="menu" href="#about-me">About Me</a>
+			<a class="menu" href="#projects">Projects</a>
+			<a class="menu" href="#interests">Interests</a>
+			<a class="menu" href="#contact-info">Contact Info</a>
+		</nav>
+		<div class="header-grid">
+			<img class="box" id="pfp" src="images/profile_pic.png" alt="Laura's Profile Picture"/>
+			<h1 class="box" id="name">Hi, I'm Laura Tian</h1>
+			<h2 class="box" id="position">I'm into Web Development</h2>
+		</div>
 	</header>
 
-	<main>
-		<section id="about-me">
-			<h2>About Me</h2>
-			<pre>
-I am a computer science student at UCSD with an interest for web development and machine learning. Lorem ipsum dolor 
-sit amet, consectetur adipiscing elit. Proin pellentesque mi eu mauris congue iaculis. Vestibulum pharetra molestie lorem sit 
-amet finibus. Donec id pharetra purus, et bibendum orci. Integer consectetur justo nec lacus finibus posuere. Ut non lectus quam. 
-Suspendisse potenti. Nulla congue ornare porta. <em>Integer suscipit</em> nec arcu et luctus. Nunc efficitur dolor nec leo fermentum rhoncus.
-Praesent sodales varius odio, non viverra ligula euismod vel. Cras vel justo et arcu fringilla scelerisque. Sed a orci lectus. 
-Fusce nec est at ante fermentum facilisis sit amet vel nibh. Duis maximus ex id viverra semper. Duis venenatis dui tincidunt, 
-efficitur ante at, scelerisque quam.
-			</pre>
-		</section>
+	<main class="body-grid">
 		<section id="skills">
 			<h2>GPA and Relevant Coursework</h2>
 			<ul>
@@ -59,61 +409,78 @@ efficitur ante at, scelerisque quam.
 				<li><p>urna a auctor malesuada</p></li>
 			</ul>
 		</section>
+		<section id="about-me">
+			<h2>About Me</h2>
+			<p>
+				I am a computer science student at UCSD with an interest for web development and machine learning. Lorem ipsum dolor 
+				sit amet, consectetur adipiscing elit. Proin pellentesque mi eu mauris congue iaculis. Vestibulum pharetra molestie lorem sit 
+				amet finibus. Donec id pharetra purus, et bibendum orci. Integer consectetur justo nec lacus finibus posuere. Ut non lectus quam. 
+				Suspendisse potenti. Nulla congue ornare porta. <em>Integer suscipit</em> nec arcu et luctus. Nunc efficitur dolor nec leo fermentum rhoncus.
+				Praesent sodales varius odio, non viverra ligula euismod vel. Cras vel justo et arcu fringilla scelerisque. Sed a orci lectus. 
+				Fusce nec est at ante fermentum facilisis sit amet vel nibh. Duis maximus ex id viverra semper. Duis venenatis dui tincidunt, 
+				efficitur ante at, scelerisque quam.
+			</p>
+		</section>
 		<section id="experiences">
-			<h2>Experience 1</h2>
-			<img src="images/bear.png" alt="Experience 1 relevant picture" height="50" width="50" />
-			<p>Project Description Here. Quisque rutrum urna tellus, ac <b>consequat massa</b> commodo eget</p>
-			<br />
-	
-			<h2>Experience 2</h2>
-			<img src="images/bear.png" alt="Experience 2 relevant picture" height="50" width="50" />
-			<p>Project Description Here. Sed pellentesque imperdiet mi quis tincidunt. Quisque libero 
-				magna, ornare in massa ut, laoreet viverra sapien. Where I use <code>ReactJS</code> to build websites.
-			</p>
-			<br />
-	
-			<h2>Experience 3</h2>
-			<img src="images/bear.png" alt="Experience 3 relevant picture" height="50" width="50" />
-			<p>Project Description Here.
-				Pellentesque egestas, urna a auctor malesuada, velit diam mollis odio, non ullamcorper nisi turpis eget metus.
-			</p>
-			<br />
+			<div id="exp1">
+				<h2>Experience 1</h2>
+				<img src="images/bear.png" alt="Experience 1 relevant picture" height="50" width="50" />
+				<p>Project Description Here. Quisque rutrum urna tellus, ac <b>consequat massa</b> commodo eget</p>
+				<!-- <br /> -->
+			</div>
+			
+			<div id="exp2">
+				<h2>Experience 2</h2>
+				<img src="images/bear.png" alt="Experience 2 relevant picture" height="50" width="50" />
+				<p>Project Description Here. Sed pellentesque imperdiet mi quis tincidunt. Quisque libero 
+					magna, ornare in massa ut, laoreet viverra sapien. Where I use <code>ReactJS</code> to build websites.
+				</p>
+				<!-- <br /> -->
+			</div>
+			
+			<div id="exp3">
+				<h2>Experience 3</h2>
+				<img src="images/bear.png" alt="Experience 3 relevant picture" height="50" width="50" />
+				<p>Project Description Here.
+					Pellentesque egestas, urna a auctor malesuada, velit diam mollis odio, non ullamcorper nisi turpis eget metus.
+				</p>
+				<!-- <br /> -->
+			</div>
 		</section>
 		<section id="projects">
-			<h1>Project 1</h1>
-			<h3>Project Name</h3>
-			<p>Project Description here</p>
-			<iframe src="https://github.com/" title="Project 1 Code Snippet"></iframe>
-			<form action="">
-				<input type="submit" value="Project Link">
-			</form>
-			<!-- <button type="button"><a href="" target="_blank">Project Link</a></button> -->
-			<br />
-
-			<h1>Project 2</h1>
-			<h3>Project Name</h3>
-			<p>Project Description here</p>
-			<form action="">
-				<input type="submit" value="Project Link">
-			</form>			<br />
-
-			<h1>Project 3</h1>
-			<h3>Project Name</h3>
-			<p>Project Description here</p>
-			<form action="">
-				<input type="submit" value="Project Link">
-			</form>			<br />
-
-			<aside>
-				<h3><span style="color:red">Important</span> Things I Learned</h3>
-				<p>Insert description of details here.
-					Mauris malesuada, neque ut pretium maximus, risus lacus convallis velit, vel efficitur diam metus sit amet orci. Quisque tempor molestie felis quis consectetur. <strong>Aliquam mattis enim nunc</strong>, ac ultrices est finibus ut.</p>
-			</aside>
+			<div id="proj1">
+				<h2>Project 1</h2>
+				<h3>Project Name</h3>
+				<p>Project Description here</p>
+				<form action="">
+					<input type="submit" value="Project Link">
+				</form>
+				<!-- <button type="button"><a href="" target="_blank">Project Link</a></button> -->
+				<br />
+			</div>
+			
+			<div id="proj2"> 
+				<h2>Project 2</h2>
+				<h3>Project Name</h3>
+				<p>Project Description here</p>
+				<form action="">
+					<input type="submit" value="Project Link">
+				</form>			<br />
+			</div>
+			
+			<div id="proj3">
+				<h2>Project 3</h2>
+				<h3>Project Name</h3>
+				<p>Project Description here</p>
+				<form action="">
+					<input type="submit" value="Project Link">
+				</form>			<br />
+			</div>
 		</section>
 
-		<hr>
+		<!-- <hr> -->
 
-		<section>
+		<section id="interests">
 			<h2>Fields of Interest</h2>
 			<picture>
 				<source media="(min-width:650px)" srcset="images/software-engineering.jpg">
@@ -121,7 +488,7 @@ efficitur ante at, scelerisque quam.
 				<img src="images/machine-learning.jpg" alt="Machine Learning" height="200" width="400" />
 			</picture>
 		</section>
-		<section>
+		<section id="hobbies">
 			<h2>Hobbies</h2>
 			<p>One thing about me is that I <strong>LOVE</strong> to cook! One of my favorite recipes to make is Egg Fried Rice. 
 				The recipe is as follows:</p>
@@ -149,7 +516,6 @@ efficitur ante at, scelerisque quam.
 					<li>Remove from stove and serve!</li>
 				</ol>
 			</details>
-			
 		</section>
 
 		<section id="UCSD">
@@ -172,25 +538,21 @@ efficitur ante at, scelerisque quam.
 					<img src="images/triton.jpg" alt="Triton" height="430" width="700" />
 					<figcaption>UCSD Triton Statue</figcaption>
 				</figure>
-				<br />
+			</section>
 
-				<section id="links">
-					<h2>Useful UCSD Links</h2>
-					<ul>
-						<li><a href="http://tritonlink.ucsd.edu">TritonLink</a></li>
-						<li><a href="http://canvas.ucsd.edu">Canvas</a></li>
-						<li><a href="http://w3.org">W3</a></li>
-					</ul>
-				</section>
+			<section id="overview">
+				<p>General description of UCSD experiences and general overview of UCSD</p>
+				<h2>Useful UCSD Links</h2>
+				<ul>
+					<li><a href="http://tritonlink.ucsd.edu">TritonLink</a></li>
+					<li><a href="http://canvas.ucsd.edu">Canvas</a></li>
+					<li><a href="http://w3.org">W3</a></li>
+				</ul>
 			</section>
 
 			<section id="courses">
 				<table>
 					<caption><h2>Fall 2023 Courses</h2></caption>
-					<colgroup>
-						<col span="1" style="">
-						<col style="">
-					</colgroup>
 					<tr>
 						<th>Course Number</th>
 						<th>Course Name</th>
@@ -212,11 +574,10 @@ efficitur ante at, scelerisque quam.
 						<td>Intro to Machine Learning</td>
 					</tr>
 				</table>
-
 			</section>
 		</section>
 		
-		<hr>
+		<!-- <hr> -->
 
 		<section id="contact-info">
 			<h2>Personal Profiles</h2>
@@ -275,7 +636,7 @@ efficitur ante at, scelerisque quam.
 			  </form>
 		</section>
 
-		<section id="draw">
+		<!-- <section id="draw">
 			<p>Click the button below to display circle drawings:</p>
 			<button onclick="showContent()">Show Circles</button>
 			<template>
@@ -302,7 +663,7 @@ efficitur ante at, scelerisque quam.
 				}
 			</script>
 			
-		</section>
+		</section> -->
 	</main>
 
 	<footer>
