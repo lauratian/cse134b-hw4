@@ -9,18 +9,9 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 	<title>Laura's Portfolio</title>
 	<link href="images/favicon.ico" rel="icon" />
-	<!-- <link href="styles/main.css" rel="stylesheet" /> -->
 	<link href="styles/homepage.css" rel="stylesheet" />
-	<script>
-		window.addEventListener('load', function () {
-			let time = window.performance.timing,
-				complete = time.domComplete - time.domLoading;
-			document.getElementById('page-load-info').innerHTML = `<strong>Page Loaded in ${parseInt(complete)}ms
-			 on ${new Date().toLocaleString("en-US")}</strong>`;
-		});
-	</script>
 </head>
-
+<!-- https://www.pexels.com/photo/a-person-drawing-a-blue-print-6615190/ -->
 <body>
 	<header>
 		<nav>
@@ -68,23 +59,30 @@
 		<section id="experiences">
 			<div id="exp1">
 				<h2>Experience 1</h2>
-				<img src="images/bear.png" alt="Experience 1 relevant picture" height="50" width="50" />
-				<p>Project Description Here. Quisque rutrum urna tellus, ac <b>consequat massa</b> commodo eget</p>
+				<img src="images/bear.png" alt="Experience 1 relevant picture" height="auto" width="100%" />
+				<p>
+					Project Description Here. Quisque rutrum urna tellus, ac <b>consequat massa</b> commodo egetSed massa ipsum, fermentum vitae ornare ac, 
+					tempor ac elit. Etiam semper, lacus in porta posuere, orci neque pellentesque felis, a dignissim magna dui vitae arcu. Curabitur non 
+					egestas massa. 
+				</p>
 				<!-- <br /> -->
 			</div>
 			
 			<div id="exp2">
 				<h2>Experience 2</h2>
-				<img src="images/bear.png" alt="Experience 2 relevant picture" height="50" width="50" />
-				<p>Project Description Here. Sed pellentesque imperdiet mi quis tincidunt. Quisque libero 
+				<img src="images/bear.png" alt="Experience 2 relevant picture" height="auto" width="100%" />
+				<p>
+					Project Description Here. Sed pellentesque imperdiet mi quis tincidunt. Quisque libero 
 					magna, ornare in massa ut, laoreet viverra sapien. Where I use <code>ReactJS</code> to build websites.
+					Sed massa ipsum, fermentum vitae ornare ac, tempor ac elit. Etiam semper, lacus in porta posuere, orci 
+					neque pellentesque felis, a dignissim magna dui vitae arcu. Curabitur non egestas massa. 
 				</p>
 				<!-- <br /> -->
 			</div>
 			
 			<div id="exp3">
 				<h2>Experience 3</h2>
-				<img src="images/bear.png" alt="Experience 3 relevant picture" height="50" width="50" />
+				<img src="images/bear.png" alt="Experience 3 relevant picture" height="auto" width="100%" />
 				<p>Project Description Here.
 					Pellentesque egestas, urna a auctor malesuada, velit diam mollis odio, non ullamcorper nisi turpis eget metus.
 				</p>
@@ -95,8 +93,13 @@
 			<div id="proj1">
 				<h2>Project 1</h2>
 				<h3>Project Name</h3>
-				<p>Project Description here</p>
-				<form action="">
+				<p>
+					Project Description here. Project Description Here. Sed pellentesque imperdiet mi quis tincidunt. Quisque libero 
+					magna, ornare in massa ut, laoreet viverra sapien. Where I use to build websites.
+					Sed massa ipsum, fermentum vitae ornare ac, tempor ac elit. Etiam semper, lacus in porta posuere, orci 
+					neque pellentesque felis, a dignissim magna dui vitae arcu. Curabitur non egestas massa. 
+				</p>
+				<form action="https://github.com/">
 					<input class="button" type="submit" value="Project Link">
 				</form>
 				<!-- <button type="button"><a href="" target="_blank">Project Link</a></button> -->
@@ -106,8 +109,13 @@
 			<div id="proj2"> 
 				<h2>Project 2</h2>
 				<h3>Project Name</h3>
-				<p>Project Description here</p>
-				<form action="">
+				<p>
+					Project Description here. Project Description Here. Sed pellentesque imperdiet mi quis tincidunt. Quisque libero 
+					magna, ornare in massa ut, laoreet viverra sapien. Where I use to build websites.
+					Sed massa ipsum, fermentum vitae ornare ac, tempor ac elit. Etiam semper, lacus in porta posuere, orci 
+					neque pellentesque felis, a dignissim magna dui vitae arcu. Curabitur non egestas massa. 
+				</p>
+				<form action="https://github.com/">
 					<input class="button" type="submit" value="Project Link">
 				</form>			<br />
 			</div>
@@ -115,8 +123,13 @@
 			<div id="proj3">
 				<h2>Project 3</h2>
 				<h3>Project Name</h3>
-				<p>Project Description here</p>
-				<form action="">
+				<p>
+					Project Description here. Project Description Here. Sed pellentesque imperdiet mi quis tincidunt. Quisque libero 
+					magna, ornare in massa ut, laoreet viverra sapien. Where I use to build websites.
+					Sed massa ipsum, fermentum vitae ornare ac, tempor ac elit. Etiam semper, lacus in porta posuere, orci 
+					neque pellentesque felis, a dignissim magna dui vitae arcu. Curabitur non egestas massa. 
+				</p>
+				<form action="https://github.com/">
 					<input class="button" type="submit" value="Project Link">
 				</form>			<br />
 			</div>
@@ -125,16 +138,16 @@
 		<section id="interests">
 			<h2>Fields of Interest</h2>
 			<picture>
-				<source media="(min-width:650px)" srcset="images/software-engineering.jpg">
-				<!-- <img src="images/software-engineering.jpg" alt="Software Engineering" height="200" width="400" /> -->
-				<img src="images/machine-learning.jpg" alt="Machine Learning" height="200" width="400" />
+				<source media="(min-width:650px)" srcset="images/stem-paper.jpg">
+				 <!-- <img src="images/software-engineering.jpg" alt="Software Engineering" height="200" width="400" /> -->
+				<img src="images/machine-learning.jpg" alt="Machine Learning" height="auto" width="100%" />
 			</picture>
 		</section>
 		<section id="hobbies">
 			<h2>Hobbies</h2>
 			<p>One thing about me is that I <strong>LOVE</strong> to cook! One of my favorite recipes to make is Egg Fried Rice. 
 				The recipe is as follows:</p>
-			<details>
+			<details open>
 				<summary>Ingredients</summary>
 				<ul>
 					<li>Cooked Rice</li>
@@ -146,7 +159,7 @@
 					<li>Pepper, Soysauce</li>
 				</ul>
 			</details>
-			<details>
+			<details open>
 				<summary>Instructions</summary>
 				<ol>
 					<li>Prepare all the ingredients and dice vegetables</li>
@@ -176,14 +189,22 @@
 					<img src="images/bear.png" alt="Warren Bear" height="auto" width="100%" />
 					<figcaption>UCSD Warren Bear Next to CSE Building</figcaption>
 				</figure>
-				<figure>
+				<!-- <figure>
 					<img src="images/triton.jpg" alt="Triton" height="auto" width="100%" />
 					<figcaption>UCSD Triton Statue</figcaption>
-				</figure>
+				</figure> -->
 			</section>
 
 			<section id="overview">
-				<p>General description of UCSD experiences and general overview of UCSD</p>
+				<p>
+					General description of UCSD experiences and general overview of UCSD. Donec enim elit, 
+					tempor quis massa sit amet, eleifend blandit turpis. Aenean sit amet cursus tellus, et 
+					euismod arcu. Etiam tincidunt elementum metus non molestie. Vestibulum eget vestibulum ante. 
+					Aenean ut risus sit amet libero commodo faucibus ut sed leo. Phasellus nunc purus, vehicula 
+					vitae imperdiet quis, pretium vel ante. Donec gravida fringilla rhoncus. Donec et congue 
+					diam. Duis rutrum neque at dui elementum, vel rutrum sem posuere. Maecenas aliquet iaculis 
+					massa.
+				</p>
 				<h2>Useful UCSD Links</h2>
 				<ul>
 					<li><a href="http://tritonlink.ucsd.edu">TritonLink</a></li>
@@ -218,16 +239,14 @@
 				</table>
 			</section>
 		</section>
-		
-		<!-- <hr> -->
 
 		<section id="contact-info">
 			<h2>Personal Profiles</h2>
 			<nav>
 				<ul>
-					<li><a href="">LinkedIn</a></li>
-					<li><a href="">GitHub</a></li>
-					<li><a href=""></a>Email</li>
+					<li><a href="https://www.linkedin.com/">LinkedIn</a></li>
+					<li><a href="https://github.com/">GitHub</a></li>
+					<li><a href="https://mail.google.com/">Email</a></li>
 				</ul>
 			</nav>
 		</section>
