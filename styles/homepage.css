@@ -1,6 +1,25 @@
 /* homepage.css */
 
 @font-face {
+    font-family: "Literata";
+    font-style: normal;
+    font-weight: 400;
+    src: url("../fonts/Literata/static/Literata-Regular.ttf") format("truetype");
+  }
+  @font-face {
+    font-family: "Literata";
+    font-style: bold;
+    font-weight: 400;
+    src: url("../fonts/Literata/static/Literata-Bold.ttf") format("truetype");
+  }
+  @font-face {
+    font-family: "Literata";
+    font-style: italic;
+    font-weight: 400;
+    src: url("../fonts/Literata/static/Literata-Italic.ttf") format("truetype");
+  }
+
+/* @font-face {
     font-family: "Literata", "creato_display", "times_sans_serif";
     font-style: normal;
     font-weight: 400;
@@ -26,7 +45,7 @@
         url("../fonts/Literata/static/Literata-Italic.ttf") format("truetype"),
         url("../fonts/creato_display/CreatoDisplay-RegularItalic.otf") format("opentype"),
         url("../fonts/times_sans_serif/TIMESS__.ttf") format("truetype");
-}
+} */
 
 /* CSS Variables */
 :root {
@@ -86,12 +105,12 @@ header nav {
     text-align: right;
     background-color: white;
     padding: 10px;
+}
 
-    .menu {
-        padding: 10px;
-        text-decoration: none;
-        color: var(--secondary-color, #602f74);
-    }
+.menu {
+    padding: 10px;
+    text-decoration: none;
+    color: var(--secondary-color, #602f74);
 }
 
 h2 {
