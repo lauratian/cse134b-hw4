@@ -42,8 +42,8 @@ header {
     text-align: center;
     color: #fff;
     /* CSS Variables */ 
-    /* background-color: var(--primary-color, #aa89c9); */
-    background-color: var(--custom-color, #aa89c9);
+    background-color: var(--primary-color, #aa89c9);
+    /* background-color: var(--custom-color, #aa89c9); */
 }
 
     .header-grid {
@@ -107,6 +107,12 @@ section {
     border-radius: 8px;
 }
 
+nav:has(ul), #contact-info h2 {
+    padding-left: 40%;
+    padding-right: 40%;
+    text-align: center;
+}
+
 @media screen and (max-width: 600px) {
     * {
         font-size: 1em;
@@ -165,20 +171,25 @@ section {
             grid-row: 1 / 2;
             grid-column: 1 / 2;
 
-            background-color: var(--primary-color, #aa89c9);
+            background-color: var(--custom-color, #c9b7da);
             padding: 10px;
+            border-radius: 10px;
         }
         #proj2 {
             grid-row: 2 / 3;
             grid-column: 1 / 2;
 
-            background-color: var(--primary-color, #aa89c9);
+            background-color: var(--custom-color, #c9b7da);
+            padding: 10px;
+            border-radius: 10px;
         }
         #proj3 {
             grid-row: 3 / 4;
             grid-column: 1 / 2;
             
-            background-color: var(--primary-color, #aa89c9);
+            background-color: var(--custom-color, #c9b7da);
+            padding: 10px;
+            border-radius: 10px;
         }
     
     #interests {
@@ -223,6 +234,8 @@ section {
     #contact-info {
         grid-row: 7 / 8;
         grid-column: 1 / 2;
+
+        text-align: center;
     }
     
     #email {
@@ -293,7 +306,7 @@ section {
             grid-row: 1 / 2;
             grid-column: 1 / 2;
 
-            background-color: var(--tertiary-color, #c9b7da);
+            background-color: var(--custom-color, #c9b7da);
             padding: 10px;
             border-radius: 10px;
         }
@@ -301,7 +314,7 @@ section {
             grid-row: 1 / 2;
             grid-column: 2 / 3;
 
-            background-color: var(--tertiary-color, #c9b7da);
+            background-color: var(--custom-color, #c9b7da);
             padding: 10px;
             border-radius: 10px;
         }
@@ -309,7 +322,7 @@ section {
             grid-row: 1 / 2;
             grid-column: 3 / 4;
 
-            background-color: var(--tertiary-color, #c9b7da);
+            background-color: var(--custom-color, #c9b7da);
             padding: 10px;
             border-radius: 10px;
         }
@@ -356,10 +369,6 @@ section {
     #contact-info {
         grid-row: 7 / 8;
         grid-column: 1 / 7;
-
-        padding-left: 40%;
-        padding-right: 40%;
-        text-align: center;
     }
     
     #email {
