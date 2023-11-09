@@ -13,39 +13,17 @@
     src: url("../fonts/Literata/static/Literata-Italic.ttf") format("truetype");
   }
 
-/* @font-face {
-    font-family: "Literata", "creato_display", "times_sans_serif";
-    font-style: normal;
-    font-weight: 400;
-    src: 
-        url("../fonts/Literata/static/Literata-Regular.ttf") format("truetype"),
-        url("../fonts/creato_display/CreatoDisplay-Regular.otf") format("opentype"),
-        url("../fonts/times_sans_serif/TIMESS__.ttf") format("truetype");
-}
-@font-face {
-    font-family: "Literata", "creato_display", "times_sans_serif";
-    font-style: bold;
-    font-weight: 400;
-    src: 
-        url("../fonts/Literata/static/Literata-Bold.ttf") format("truetype"),
-        url("../fonts/creato_display/CreatoDisplay-Bold.otf") format("opentype"),
-        url("../fonts/times_sans_serif/TIMESS__.ttf") format("truetype");
-}
-@font-face {
-    font-family: "Literata", "creato_display", "times_sans_serif";
-    font-style: italic;
-    font-weight: 400;
-    src: 
-        url("../fonts/Literata/static/Literata-Italic.ttf") format("truetype"),
-        url("../fonts/creato_display/CreatoDisplay-RegularItalic.otf") format("opentype"),
-        url("../fonts/times_sans_serif/TIMESS__.ttf") format("truetype");
-} */
-
 /* CSS Variables */
 :root {
     --primary-color: #aa89c9;
     --secondary-color: #602f74;
     --tertiary-color: #c9b7da;
+    --custom-color: color(display-p3 0.9,0.9,0.98);
+    --custom-mix-color: color-mix(display-p3 #ff0000, display-p3 #0000ff, 50%);
+}
+
+html {
+    font-family: 'Arial', "Literata", sans-serif;
 }
 
 img, video {
@@ -64,7 +42,8 @@ header {
     text-align: center;
     color: #fff;
     /* CSS Variables */ 
-    background-color: var(--primary-color, #aa89c9);
+    /* background-color: var(--primary-color, #aa89c9); */
+    background-color: var(--custom-color, #aa89c9);
 }
 
     .header-grid {
