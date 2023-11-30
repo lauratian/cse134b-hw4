@@ -186,10 +186,6 @@
 					<img src="images/bear.png" alt="Warren Bear" >
 					<figcaption>UCSD Warren Bear Next to CSE Building</figcaption>
 				</figure>
-				<!-- <figure>
-					<img src="images/triton.jpg" alt="Triton" >
-					<figcaption>UCSD Triton Statue</figcaption>
-				</figure> -->
 			</section>
 
 			<section id="overview">
@@ -248,32 +244,123 @@
 			</nav>
 		</section>
 
-		<section id="email">
+		<section id="email-form">
 			<form action="https://httpbin.org/post" method="post">
 				<fieldset>
 					<legend><h2>Send me an Email!</h2></legend>
-					<label for="name">Name:</label>
-					<input type="text" id="name" name="name"><br><br>
-					<label for="email">Email:</label>
-					<input type="text" id="email" name="email"><br>
-					<section class="comment-grid">
-						<section id="comment-grid">
-							<label for="comment">Comments:</label><br>
-							<textarea id="comment" name="comment" rows="4" cols="50">Please type email here.</textarea>
+					<label for="name">Name: <span class="required-field">*</span></label>
+					<input type="text" id="name" name="name" maxlength="20" required><br><br>
+					<label for="email">Email: <span class="required-field">*</span></label>
+					<input type="email" id="email" name="email" maxlength="20" required><br>
+					<section class="comments-grid">
+						<section id="comments-grid">
+							<label for="comments">Comments: <span class="required-field">*</span></label><br>
+							<textarea id="comments" name="comments" rows="4" cols="50" maxlength="300" placeholder="Please type comments here." title="Only letters and numbers are allowed" required ></textarea>
+                            <span id="info-message" style="font-size: 70%"><span id="charCount">300</span> characters remain</span>
 						</section>
 						<section id="errors-grid">
-							<label for="errors">Errors:</label><br>
-						<textarea id="errors" name="errors" rows="4" cols="50">Please let me know any encountered errors.</textarea>
+							<label for="errors">Errors: <span class="required-field">*</span></label><br>
+                            <textarea id="errors" name="errors" rows="4" cols="50" maxlength="300" placeholder="Please let me know any errors encountered."  title="Only letters and numbers are allowed" required></textarea> 
 						</section>
 					</section>
 					<br><br>
-					<input class="button" type="submit" value="Send">
+					<input id="submit" class="button" type="submit" value="Send">
 					<input type="hidden" name="possible_bot" value="true">
 				</fieldset>
 			  </form>
 		</section>
 
-		<section id="review">
+        <script>
+            const nameInput = document.getElementById('name');
+            const emailInput = document.getElementById('email');
+            const commentsTextarea = document.getElementById('comments');
+            const charCountSpan = document.getElementById('charCount');
+            const formErrors = [];
+            let formErrorMsg = "";
+
+            // email format string
+            // pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}"
+          
+            function validateInput(input, pattern, errorMessage) {
+              const inputValue = input.value;
+              if (!pattern.test(inputValue)) {
+                flashFieldAndMessage(input);
+                formErrors.push({ field: input.name, message: errorMessage });
+              }
+            }
+          
+            function validateTextarea(textarea, pattern, maxLength, errorMessage) {
+              const inputValue = textarea.value;
+              const remainingChars = maxLength - inputValue.length;
+              charCountSpan.textContent = remainingChars;
+              document.querySelector('#info-message').style.color = '#006400'; // Lots of char left color
+
+              if (!pattern.test(inputValue)) {
+                flashFieldAndMessage(textarea);
+                formErrors.push({ field: textarea.name, message: errorMessage });
+                console.log({ field: textarea.name, message: errorMessage });
+              }
+          
+              if (remainingChars < 20) {
+                document.querySelector('#info-message').style.color = '#ff9800'; // Warn color
+              }
+          
+              if (remainingChars < 0) {
+                flashFieldAndMessage(textarea);
+                formErrors.push({ field: textarea.name, message: errorMessage });
+              }
+            }
+          
+            function flashFieldAndMessage(field) {
+              const errorMessage = document.createElement('div');
+              errorMessage.className = 'error-message';
+              errorMessage.textContent = 'Illegal character entered.';
+              errorMessage.style.color = '#FF0000';
+              errorMessage.style.fontSize = '70%';
+              field.parentNode.insertBefore(errorMessage, field.nextSibling);
+              setTimeout(() => {
+                errorMessage.style.opacity = 0;
+                setTimeout(() => errorMessage.remove(), 300);
+              }, 3000);
+            }
+          
+            function flashErrorMsg(field) {
+              const errorMessage = document.createElement('div');
+              errorMessage.className = 'error-message';
+              errorMessage.textContent = formErrorMsg;
+              errorMessage.style.color = '#FF0000';
+              field.parentNode.insertBefore(errorMessage, field.nextSibling);
+              setTimeout(() => errorMessage.remove(), 5000);
+          }
+          
+            document.getElementById('name').addEventListener('input', function () {
+              validateInput(nameInput, /^[a-zA-Z0-9]+$/, 'Illegal character entered in name.');
+            });
+
+            document.getElementById('email').addEventListener('submit', function () {
+                validateInput(emailInput, /[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}/, 'Illegal character/pattern entered in email.');
+            });
+          
+            document.getElementById('comments').addEventListener('input', function () {
+              validateTextarea(commentsTextarea, /^[a-zA-Z0-9.!?]+$/, 300, 'Exceeded character limit or invaid character in comments.');
+            });
+          
+            document.getElementById('submit').addEventListener('click', function (event) {          
+              validateInput(nameInput, /^[a-zA-Z0-9]+$/, 'Illegal character entered in name.');
+              validateTextarea(commentsTextarea, /^[a-zA-Z0-9.!?]+$/, 300, 'Exceeded character limit or invaid character in comments.');
+          
+              if (formErrors.length > 0) {
+                // Display form errors below form
+                formErrorMsg = JSON.stringify(formErrors);
+                flashErrorMsg(submit);
+                event.preventDefault(); // Prevent form submission if there are errors
+              }
+          
+              formErrors.length = 0; // Reset form errors on each form submission
+            });
+          </script>
+
+		<section id="review-form">
 			<form action="/action_page.php">
 				<fieldset>
 					<legend><h2>Leave a Review</h2></legend>
@@ -304,5 +391,8 @@
 		</audio>
 	</footer>
 </body>
+
+
+
 
 </html>

@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+      margin: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    form {
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      width: 300px;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 8px;
+    }
+
+    input, textarea {
+      width: 100%;
+      padding: 8px;
+      margin-bottom: 16px;
+      box-sizing: border-box;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+
+    input:required:invalid, textarea:required:invalid {
+      border-color: #ff4d4d;
+    }
+
+    input:required:valid, textarea:required:valid {
+      border-color: #4caf50;
+    }
+
+    input:focus, textarea:focus {
+      outline: none;
+      border-color: #0066cc;
+      box-shadow: 0 0 5px rgba(0, 102, 204, 0.5);
+    }
+
+    input + span, textarea + span {
+      display: block;
+      color: #ff4d4d;
+      font-size: 14px;
+    }
+
+    .error-message {
+      color: #ff4d4d;
+      font-size: 14px;
+      margin-top: 8px;
+      animation: fadeOut 3s ease;
+    }
+
+    @keyframes fadeOut {
+      0% { opacity: 1; }
+      100% { opacity: 0; }
+    }
+
+    .info-message {
+      color: #4caf50;
+      font-size: 14px;
+      margin-top: 8px;
+    }
+
+    button {
+      background-color: #0066cc;
+      color: #fff;
+      padding: 10px 15px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #0052a3;
+    }
+  </style>
+</head>
+<body>
+
+  <form action="https://httpbin.org/post" method="post">
+    <label for="username">Username:</label>
+    <input type="text" id="username" name="username" required pattern="[a-zA-Z0-9]+" title="Only letters and numbers are allowed">
+    <span>Username is required. Only letters and numbers are allowed.</span>
+
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email" required>
+    <span>Email is required</span>
+
+    <label for="optionalField">Optional Field:</label>
+    <input type="text" id="optionalField" name="optionalField" placeholder="Optional" pattern="[a-zA-Z0-9]+" title="Only letters and numbers are allowed">
+    <span>This field is optional. Only letters and numbers are allowed.</span>
+
+    <label for="comments">Comments:</label>
+    <textarea id="comments" name="comments" rows="4" cols="50" maxlength="200"></textarea>
+    <span class="info-message">You have <span id="charCount">200</span> characters remaining.</span>
+
+    <button type="submit">Submit</button>
+  </form>
+
+  <script>
+    const usernameInput = document.getElementById('username');
+    const optionalFieldInput = document.getElementById('optionalField');
+    const commentsTextarea = document.getElementById('comments');
+    const charCountSpan = document.getElementById('charCount');
+    const formErrors = [];
+
+    usernameInput.addEventListener('input', function (event) {
+      const inputValue = event.target.value;
+      if (!/^[a-zA-Z0-9]+$/.test(inputValue)) {
+        flashFieldAndMessage(usernameInput);
+        formErrors.push({ field: 'username', message: 'Illegal character entered in username.' });
+      }
+    });
+
+    optionalFieldInput.addEventListener('input', function (event) {
+      const inputValue = event.target.value;
+      if (!/^[a-zA-Z0-9]+$/.test(inputValue)) {
+        flashFieldAndMessage(optionalFieldInput);
+        formErrors.push({ field: 'optionalField', message: 'Illegal character entered in optional field.' });
+      }
+    });
+
+    commentsTextarea.addEventListener('input', function (event) {
+      const inputValue = event.target.value;
+      const remainingChars = 200 - inputValue.length;
+      charCountSpan.textContent = remainingChars;
+
+      if (remainingChars < 20) {
+        document.querySelector('.info-message').style.color = '#ff9800'; // Warn color
+      }
+
+      if (remainingChars < 0) {
+        flashFieldAndMessage(commentsTextarea);
+        formErrors.push({ field: 'comments', message: 'Exceeded character limit in comments.' });
+      }
+    });
+
+    function flashFieldAndMessage(field) {
+      field.style.borderColor = '#ff4d4d';
+      const errorMessage = document.createElement('div');
+      errorMessage.className = 'error-message';
+      errorMessage.textContent = 'Illegal character entered.';
+      field.parentNode.insertBefore(errorMessage, field.nextSibling);
+      setTimeout(() => {
+        field.style.borderColor = '#ccc';
+        errorMessage.style.opacity = 0;
+        setTimeout(() => errorMessage.remove(), 300);
+      }, 3000);
+    }
+  </script>
+
+</body>
+</html>
